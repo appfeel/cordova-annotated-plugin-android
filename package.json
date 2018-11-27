@@ -1,0 +1,34 @@
+{
+    "name": "cordova-annotated-plugin-android",
+    "version": "1.0.0",
+    "description": "Enhanced CordovaPlugin class",
+    "cordova": {
+        "id": "cordova-annotated-plugin-android",
+        "platforms": [
+            "ios",
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/appfeel/cordova-annotated-plugin-android.git"
+    },
+    "author": "Miquel Martin <info@appfeel.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/appfeel/cordova-annotated-plugin-android/issues"
+    },
+    "homepage": "https://github.com/appfeel/cordova-annotated-plugin-android#readme",
+    "keywords": [
+        "cordova",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "scripts": {
+        "release": "release-it",
+        "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+    },
+    "devDependencies": {
+        "release-it": "^8.1.0"
+    }
+}
