@@ -11,6 +11,8 @@ public class MyPlugin extends AnnotatedCordovaPlugin {
 }
 ```
 
+`AnnotatedCordovaPlugin` extends original `CordovaPlugin`, so all methods are still accessible.
+
 This plugin helps developers of cordova plugins to forget of the embarrassing and complicated way to develop a cordova plugin.
 Usually the developer had to implement a plugin like this (see [Android Plugin Development Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html)):
 
