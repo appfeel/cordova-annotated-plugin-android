@@ -1,7 +1,18 @@
 # cordova-annotated-plugin-android<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
 
+With this plugin, a cordova plugin can be implemented in this way:
+
+```java
+public class MyPlugin extends AnnotatedCordovaPlugin {
+    @PluginAction
+    private void pluginAction1(int firstOption, String secondOption, CallbackContext callbackContext) {
+        ...
+    }
+}
+```
+
 This plugin helps developers of cordova plugins to forget of the embarrassing and complicated way to develop a cordova plugin.
-Usually the developer should implement a plugin like this (see [Android Plugin Development Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html)):
+Usually the developer had to implement a plugin like this (see [Android Plugin Development Guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/plugin.html)):
 
 ```java
 public class MyPlugin extends CordovaPlugin {
@@ -30,17 +41,6 @@ public class MyPlugin extends CordovaPlugin {
             return new callbackContext.error("options is null, please specify options");
         }
         callbackContext.success();
-    }
-}
-```
-
-With this plugin it can be implemented in this way:
-
-```java
-public class MyPlugin extends AnnotatedCordovaPlugin {
-    @PluginAction
-    private void pluginAction1(int firstOption, String secondOption, CallbackContext callbackContext) {
-        ...
     }
 }
 ```
