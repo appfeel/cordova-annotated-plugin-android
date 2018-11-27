@@ -1,6 +1,6 @@
 {
   "name": "cordova-annotated-plugin-android",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhanced CordovaPlugin class",
   "cordova": {
     "id": "cordova-annotated-plugin-android",
