@@ -1,5 +1,9 @@
 # cordova-annotated-plugin-android<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
 
+[npm-url]: https://www.npmjs.com/package/cordova-annotated-plugin-android
+[npm-version]: https://img.shields.io/npm/v/cordova-annotated-plugin-android.svg
+[npm-downloads]: https://img.shields.io/npm/dm/cordova-annotated-plugin-android.svg
+
 With this plugin, a cordova plugin can be implemented in this way:
 
 ```java
@@ -86,8 +90,4 @@ Why this rewritting of chemerisuk plugin?
 - Documentation has been rewritten
 - Methods have been heavily refactored and simplified to improve maintenance
 
-
-[npm-url]: https://www.npmjs.com/package/cordova-annotated-plugin-android
-[npm-version]: https://img.shields.io/npm/v/cordova-annotated-plugin-android.svg
-[npm-downloads]: https://img.shields.io/npm/dm/cordova-annotated-plugin-android.svg
 
