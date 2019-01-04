@@ -42,7 +42,7 @@ public class AnnotatedCordovaPlugin extends CordovaPlugin {
 
         CordovaPluginAction pluginAction = pluginActions.get(action);
         if (pluginAction != null) {
-            return pluginAction.execute(cordova, args, callbackContext);
+            return pluginAction.execute(cordova, AnnotatedCordovaPlugin.this, args, callbackContext);
         }
 
         LOG.d(TAG, String.format("Unknown plugin action: %s", action));

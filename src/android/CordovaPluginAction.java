@@ -39,12 +39,12 @@ public class CordovaPluginAction {
         return mArgs;
     }
 
-    private Runnable createRunnable(final Object[] mArgs, final CallbackContext callbackContext) {
+    private Runnable createRunnable(final Object[] mArgs, final AnnotatedCordovaPlugin caller, final CallbackContext callbackContext) {
         return new Runnable() {
             @Override
             public void run() {
                 try {
-                    method.invoke(CordovaPluginAction.this, mArgs);
+                    method.invoke(caller, mArgs);
                     if (!callbackContext.isFinished() && isAutofinish) {
                         callbackContext.success();
                     }
@@ -59,10 +59,10 @@ public class CordovaPluginAction {
         };
     }
 
-    public boolean execute(CordovaInterface cordova, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(CordovaInterface cordova, AnnotatedCordovaPlugin caller, JSONArray args, CallbackContext callbackContext) throws JSONException {
         // Create new runnable to avoid concurrency conflicts
         Object[] mArgs = getMethodArgs(args, callbackContext);
-        Runnable runnable = this.createRunnable(mArgs, callbackContext);
+        Runnable runnable = this.createRunnable(mArgs, caller, callbackContext);
         if (executionThread == ExecutionThread.WORKER) {
             cordova.getThreadPool().execute(runnable);
         } else if (executionThread == ExecutionThread.UI) {
